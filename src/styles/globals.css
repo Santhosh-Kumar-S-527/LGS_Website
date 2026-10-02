@@ -1,0 +1,96 @@
+/* src/styles/globals.css */
+
+:root {
+  /* ==========================================================================
+     Colors
+     ========================================================================== */
+  /* Backgrounds */
+  --color-bg-base: #050708;
+  --color-bg-surface: #0B0E10;
+  --color-bg-raised: #111519;
+  --color-bg-subtle: #171C20;
+  --color-overlay-dark: rgba(0, 0, 0, 0.20);
+
+  /* Borders */
+  --color-border-default: #293036;
+  --color-border-strong: #3B444B;
+
+  /* Accents */
+  --color-accent-primary: #E7430B;
+  --color-accent-bright: #F4511E;
+  --color-accent-coral: #F05B36;
+  --color-accent-soft: rgba(240, 91, 54, 0.25);
+
+  /* Text & Content */
+  --color-text-primary: #F7F8F8;
+  --color-text-secondary: #C8CDD0;
+  --color-text-muted: #818A90;
+  --color-text-on-dark: #FFFFFF;
+
+  /* Semantics */
+  --color-semantic-info: #26CAD3;
+
+  /* ==========================================================================
+     Typography
+     ========================================================================== */
+  --font-family-display: "Space Grotesk", sans-serif;
+  --font-family-body: "Sora", sans-serif;
+  --font-family-mono: "Roboto Mono", monospace;
+
+  /* Scale */
+  --font-size-display-hero: 3.5rem;    /* 56px */
+  --font-size-h1: 2.25rem;            /* 36px */
+  --font-size-h2: 1.75rem;            /* 28px */
+  --font-size-h3: 1.5rem;             /* 24px */
+  --font-size-h4: 1.25rem;            /* 20px */
+  --font-size-body-lg: 1.25rem;       /* 20px */
+  --font-size-body-md: 1rem;          /* 16px */
+  --font-size-body-sm: 0.875rem;      /* 14px */
+  --font-size-eyebrow: 0.75rem;       /* 12px */
+  --font-size-utility: 0.6875rem;     /* 11px */
+
+  /* ==========================================================================
+     Layout & Spacing
+     ========================================================================== */
+  --layout-container-max: 1320px;
+  --layout-desktop-width: 1920px;
+  --layout-gutter: 24px;
+
+  --spacing-micro: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 80px;
+  --spacing-section: 120px;
+
+  /* ==========================================================================
+     Radii (Borders)
+     ========================================================================== */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     Shadows & Effects
+     ========================================================================== */
+  --shadow-card: 0 18px 48px rgba(0, 0, 0, 0.40);
+  --glow-accent: 0 0 32px rgba(231, 67, 11, 0.24);
+}
+
+/* Base Body Resets */
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-on-dark);
+}
