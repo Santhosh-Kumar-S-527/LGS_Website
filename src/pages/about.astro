@@ -1,11 +1,420 @@
 ---
+// src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
+
+// Approach 3 Pillars: Sooner, Safer, Happier
+const approachPillars = [
+  {
+    step: "01",
+    title: "Sooner",
+    subtitle: "Velocity & Latency",
+    desc: "Rapid iterative release cadence, zero-waste system design, and distributed low-latency execution pipelines (< 40ms) delivering real-time outcomes faster.",
+    badge: "HIGH THROUGHPUT"
+  },
+  {
+    step: "02",
+    title: "Safer",
+    subtitle: "Resilience & Security",
+    desc: "Deterministic software standards, fault isolation, strict data schemas, and ISO-aligned compliance guaranteeing uninterrupted operational stability.",
+    badge: "99.98% UPTIME"
+  },
+  {
+    step: "03",
+    title: "Happier",
+    subtitle: "Ergonomics & Experience",
+    desc: "Clean developer ergonomics, transparent collaboration, and mission-focused platforms built to eliminate system friction and operator burnout.",
+    badge: "HUMAN-CENTRIC"
+  }
+];
+
+// Placeholder People Data
+const people = [
+  {
+    name: "[Member Name 01]",
+    role: "[Role / Designation 01]",
+    specialization: "[Domain Specialization]",
+    initial: "01"
+  },
+  {
+    name: "[Member Name 02]",
+    role: "[Role / Designation 02]",
+    specialization: "[Domain Specialization]",
+    initial: "02"
+  },
+  {
+    name: "[Member Name 03]",
+    role: "[Role / Designation 03]",
+    specialization: "[Domain Specialization]",
+    initial: "03"
+  }
+];
+
+// Impact Metrics
+const impactMetrics = [
+  { value: "99.98%", label: "Availability SLA", detail: "Continuous uptime" },
+  { value: "< 40ms", label: "Edge Latency", detail: "Global endpoint average" },
+  { value: "140M+", label: "Telemetry Events", detail: "Processed daily" },
+  { value: "12+", label: "Mission-Critical Sectors", detail: "Active deployments" }
+];
 ---
 
-<Layout title="About Us | Lingaasys">
-  <!-- Content is automatically placed inside the shell -->
-  <section class="container-grid">
-    <h1>About Lingaasys</h1>
-    <!-- Your overlapping documentary image pair and company statements -->
-  </section>
-</MainLayout>
+<Layout
+  title="About Us | Lingaasys Technologies"
+  description="Discover the philosophy, story, people, 'Sooner, Safer, Happier' approach, and industrial impact of Lingaasys Technologies."
+>
+  <div class="relative w-full bg-[#050708] text-[#F7F8F8] font-['Sora',sans-serif] overflow-hidden selection:bg-[#E7430B] selection:text-white">
+
+    {/* =========================================================================
+        1. Hero Section: Editorial Quote
+        ========================================================================= */}
+    <!-- Inside src/pages/about.astro Hero Section -->
+<section class="reveal relative min-h-[85vh] flex items-center justify-center py-32 sm:py-40 overflow-hidden bg-[#050708]">
+  
+  {/* Background Schematic with Full Coverage & Soft Edge Mask */}
+  <div 
+    class="absolute inset-0 z-0 pointer-events-none opacity-25"
+    style="mask-image: radial-gradient(ellipse at center, black 50%, transparent 95%); -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 95%);"
+  >
+    <img 
+      src="/images/about/subtle2.png" 
+      alt="" 
+      aria-hidden="true" 
+      class="w-full h-full object-cover object-center"
+    />
+  </div>
+
+  {/* Ambient Orange Glow Behind Quote */}
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+    <div class="w-[500px] h-[250px] bg-[#E7430B]/15 blur-[140px] rounded-full"></div>
+      </div>
+
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+        <blockquote class="max-w-4xl mx-auto">
+          <p class="font-['Space_Grotesk',sans-serif] font-light text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] text-[#F7F8F8]">
+            “Software is not merely an abstraction. It is the <span class="font-medium text-[#E7430B]">industrial machinery</span> of human progress.”
+          </p>
+        </blockquote>
+
+        <p class="font-['Roboto_Mono',monospace] text-xs sm:text-sm text-[#818A90] tracking-wider uppercase">
+          ARCHITECTURAL FOUNDATION PRINCIPLE
+        </p>
+      </div>
+    </section>    
+    {/* =========================================================================
+        2. Short Centered About Content
+        ========================================================================= */}
+    <section class="reveal relative py-16 sm:py-20 bg-[#050708] overflow-hidden">
+      {/* Scattered Ambient Orange Glow - Top Right */}
+      <div class="absolute -right-32 top-0 w-[450px] h-[450px] bg-[#E7430B]/12 rounded-full blur-[140px] pointer-events-none z-0"></div>
+
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl mx-auto text-center space-y-5">
+          <span class="text-xs font-bold uppercase tracking-[0.12em] text-[#E7430B]">
+            WHAT WE DO
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-light font-['Space_Grotesk',sans-serif] tracking-tight">
+            Engineering deterministic software for <span class="font-medium text-[#E7430B]">real-world operations.</span>
+          </h2>
+          <p class="text-base sm:text-lg text-[#C8CDD0] leading-relaxed">
+            Lingaasys is a technology engineering partner delivering software that powers people, industries, and aspirations. We architect high-concurrency cloud systems, edge telematics, and intelligent automation platforms designed to operate flawlessly under severe demand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* =========================================================================
+        3. Our Story
+        ========================================================================= */}
+    <section class="reveal relative py-20 sm:py-28 bg-[#050708] overflow-hidden">
+      {/* Scattered Ambient Orange Glow - Bottom Left */}
+      <div class="absolute -left-40 bottom-40 w-[600px] h-[500px] bg-[#E7430B]/10 rounded-full blur-[160px] pointer-events-none z-0"></div>
+
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Story Narrative */}
+          <div class="lg:col-span-7 space-y-6">
+            <span class="text-xs font-bold uppercase tracking-[0.12em] text-[#E7430B]">
+              OUR STORY
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light font-['Space_Grotesk',sans-serif] tracking-tight leading-[1.2]">
+              Bridging frontier computation and <span class="font-medium text-[#E7430B]">industrial durability.</span>
+            </h2>
+            <div class="space-y-4 text-sm sm:text-base text-[#C8CDD0] leading-relaxed">
+              <p>
+                Lingaasys was created from a distinct conviction: enterprise and industrial systems deserve the precision of fine engineering, not fragile quick fixes. We observed organizations struggling to scale experimental AI, microservices, and connected edge devices within legacy industrial frameworks.
+              </p>
+              <p class="text-[#818A90]">
+                We set out to bridge that divide. From our headquarters in Coimbatore to global deployments across mission-critical sectors, we develop resilient software foundations that enable enterprises to modernize safely without operational disruption.
+              </p>
+            </div>
+            
+            <div class="pt-4 flex items-center gap-6">
+              <div class="space-y-1">
+                <span class="font-['Space_Grotesk',sans-serif] text-2xl font-bold text-white">2026</span>
+                <p class="text-xs text-[#818A90]">Architecting next-gen systems</p>
+              </div>
+              <div class="h-8 w-px bg-[#293036]"></div>
+              <div class="space-y-1">
+                <span class="font-['Space_Grotesk',sans-serif] text-2xl font-bold text-white">100%</span>
+                <p class="text-xs text-[#818A90]">Engineering focus</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Documentary Imagery Panel */}
+          <div class="lg:col-span-5 relative">
+            <div class="w-full aspect-[4/5] rounded-[24px] bg-[#0B0E10] border border-[#293036]/60 p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_18px_48px_rgba(0,0,0,0.4)]">
+              {/* Subtle Ambient Backing */}
+              <div class="absolute -right-16 -top-16 w-64 h-64 bg-[#E7430B]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+              <div class="relative z-10 font-['Roboto_Mono',monospace] text-xs text-[#818A90] space-y-1">
+              </div>
+              <!-- Wrap your <img> inside the card with this overlay -->
+              <img 
+                src="/images/about/collaboration.png" 
+                alt="Lingaasys systems engineering workshop" 
+                class="absolute inset-0 w-full h-full object-cover object-center filter grayscale-[30%] contrast-125"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#050708] via-[#050708]/60 to-transparent z-10 pointer-events-none"></div>
+              <div class="relative z-10 space-y-3">
+                <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-[#171C20] border border-[#293036] text-[#E7430B]">
+                  OPERATIONAL CORE
+                </span>
+                <p class="font-['Space_Grotesk',sans-serif] text-xl font-medium text-white">
+                  "Resilience is engineered in the foundation, not patched at runtime."
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {/* =========================================================================
+        4. Our People
+        ========================================================================= */}
+    <section class="reveal relative py-20 sm:py-28 bg-[#050708] overflow-hidden">
+      {/* Scattered Ambient Orange Glow - Center Right */}
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[550px] h-[525px] bg-[#E7430B]/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
+
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
+        
+        {/* Header */}
+        <div class="max-w-2xl space-y-3">
+          <span class="text-xs font-bold uppercase tracking-[0.12em] text-[#E7430B]">
+            OUR PEOPLE
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-light font-['Space_Grotesk',sans-serif] tracking-tight">
+            The Minds Behind <span class="font-medium text-[#E7430B]">The Machine</span>
+          </h2>
+          <p class="text-sm sm:text-base text-[#818A90]">
+            Systems architects, domain researchers, and software engineers dedicated to high-availability computation.
+          </p>
+        </div>
+
+        {/* People Grid */}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {people.map((person) => (
+            <div class="rounded-[24px] bg-[#111519] border border-[#293036] hover:border-[#3B444B] transition-all overflow-hidden flex flex-col group">
+              <div class="w-full aspect-[4/3] bg-[#0B0E10] border-b border-[#293036] flex items-center justify-center relative">
+                <span class="font-['Space_Grotesk',sans-serif] text-5xl font-light text-[#293036] group-hover:text-[#E7430B]/40 transition-colors">
+                  {person.initial}
+                </span>
+                <span class="absolute top-4 right-4 text-[11px] font-['Roboto_Mono',monospace] px-2.5 py-1 rounded bg-[#171C20] border border-[#293036] text-[#818A90]">
+                  {person.specialization}
+                </span>
+              </div>
+              <div class="p-8 space-y-2 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-xl font-medium font-['Space_Grotesk',sans-serif] text-[#F7F8F8]">
+                    {person.name}
+                  </h3>
+                  <p class="text-xs font-semibold text-[#E7430B] font-['Sora',sans-serif]">
+                    {person.role}
+                  </p>
+                </div>
+                <div class="pt-4 border-t border-[#293036]/60 flex items-center justify-between text-xs text-[#818A90]">
+                  <span class="font-['Roboto_Mono',monospace]">CORE ARCHITECT</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    {/* =========================================================================
+        5. Our Approach: Sooner, Safer, Happier
+        ========================================================================= */}
+    <section class="reveal relative py-20 sm:py-28 bg-[#050708] overflow-hidden">
+      {/* Scattered Ambient Orange Glow - Top Left */}
+      <div class="absolute -left-20 top-1/4 w-[500px] h-[375px] bg-[#E7430B]/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
+        
+        {/* Header */}
+        <div class="max-w-2xl space-y-3">
+          <span class="text-xs font-bold uppercase tracking-[0.12em] text-[#E7430B]">
+            OUR APPROACH
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-light font-['Space_Grotesk',sans-serif] tracking-tight">
+            Delivering Software
+          </h2>
+          <p class="text-sm sm:text-base text-[#818A90]">
+            Our three engineering tenets eliminate delivery drag, enforce resilience, and create reliable platforms teams enjoy operating.
+          </p>
+        </div>
+
+        {/* 3 Pillars Grid */}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {approachPillars.map((pillar) => (
+            <div class="relative p-8 sm:p-10 rounded-[24px] bg-[#0B0E10] border border-[#293036] hover:border-[#E7430B]/60 transition-all duration-500 overflow-hidden flex flex-col justify-between space-y-8 group shadow-[0_18px_48px_rgba(0,0,0,0.4)]">
+
+              {/* 1. Luminous Wave & Ribbon Background Image */}
+              <img
+                src="/images/about/card-wave-bg.png"
+                alt="approach subtle background image"
+                aria-hidden="true"
+                class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none opacity-30 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 ease-out z-0 filter contrast-110"
+              />
+
+              {/* 2. Top-to-Bottom Gradient Scrim for WCAG Text Readability */}
+              <div class="absolute inset-0 bg-gradient-to-b from-[#0B0E10] via-[#0B0E10]/70 pointer-events-none z-0"></div>
+
+            {/* 3. Dynamic Orange Glow that illuminates on hover */}
+            <div class="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-[#E7430B]/0 group-hover:bg-[#E7430B]/20 blur-3xl transition-all duration-500 pointer-events-none z-0"></div>
+
+            {/* Foreground Content */}
+            <div class="relative z-10 space-y-6">
+              <div class="flex items-center justify-between">
+                <span class="font-['Roboto_Mono',monospace] text-sm text-[#E7430B] font-bold tracking-wider">
+                  {pillar.step}/
+                </span>
+                <span class="text-[11px] font-['Roboto_Mono',monospace] px-3 py-1 rounded-full bg-[#171C20]/80 backdrop-blur-sm text-[#818A90] border border-[#293036]">
+                  {pillar.badge}
+                </span>
+              </div>
+        
+              <div class="space-y-1.5">
+                <h3 class="text-2xl font-medium font-['Space_Grotesk',sans-serif] text-white tracking-tight">
+                  {pillar.title}
+                </h3>
+                <div class="text-xs uppercase font-semibold text-[#E7430B] tracking-wider font-['Sora',sans-serif]">
+                  {pillar.subtitle}
+                </div>
+              </div>
+
+              <p class="text-sm text-[#C8CDD0] leading-relaxed font-['Sora',sans-serif]">
+                {pillar.desc}
+              </p>
+            </div>
+
+            {/* Bottom Accent Indicator */}
+            <div class="relative z-10 pt-4 border-t border-[#293036]/50 flex items-center justify-between">
+              <div class="h-0.5 w-10 bg-[#E7430B] rounded-full"></div>
+              <span class="text-xs font-['Roboto_Mono',monospace] text-[#818A90] group-hover:text-[#E7430B] transition-colors">
+              </span>
+            </div>
+          </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    {/* =========================================================================
+        6. Our Impact
+        ========================================================================= */}
+    <section class="reveal relative py-20 sm:py-28 bg-[#050708] overflow-hidden">
+      {/* Scattered Ambient Orange Glow - Bottom Center */}
+      <div class="absolute left-1/2 -translate-x-1/2 bottom-0 w-[700px] h-[350px] bg-[#E7430B]/12 rounded-full blur-[160px] pointer-events-none z-0"></div>
+
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
+        
+        {/* Header */}
+        <div class="max-w-2xl space-y-3">
+          <span class="text-xs font-bold uppercase tracking-[0.12em] text-[#E7430B]">
+            OUR IMPACT
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-light font-['Space_Grotesk',sans-serif] tracking-tight">
+            Verifiable Metrics Across <span class="font-medium text-[#E7430B]">Production Systems</span>
+          </h2>
+          <p class="text-sm sm:text-base text-[#818A90]">
+            Realized outcomes calculated across enterprise deployments, IoT streaming pipelines, and microservices.
+          </p>
+        </div>
+
+        {/* 4 Metric Counters Strip */}
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {impactMetrics.map((item) => (
+            <div class="p-8 rounded-[24px] bg-[#111519] border border-[#293036] space-y-3">
+              <div class="font-['Space_Grotesk',sans-serif] text-4xl sm:text-5xl font-light text-white tracking-tight">
+                {item.value}
+              </div>
+              <div class="pt-1">
+                <div class="text-sm font-semibold text-[#F7F8F8]">
+                  {item.label}
+                </div>
+                <div class="text-xs text-[#818A90]">
+                  {item.detail}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  /* Scroll reveal base classes */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // Intersection Observer to trigger entrance animations on scroll
+  const observerCallback: IntersectionObserverCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observerOptions: IntersectionObserverInit = {
+    root: null,
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
